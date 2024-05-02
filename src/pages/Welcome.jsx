@@ -10,19 +10,18 @@ const Welcome = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center py-6">
       <div className="flex flex-col items-center justify-center w-full max-w-md">
-        <h1 className="text-3xl text-center mb-1 font-mono py-3">
+        <h1 className="text-5xl text-center mb-1 font-outline font-bold py-2">
           Welcome to PokéFight!
         </h1>
         <h2 className="mb-5 text-center font-mono py-5">
           Embark on an exciting adventure where you can challenge wild Pokémon
-          and catch them. <br /> Your next adventure awaits you in the world of
-          PokéFight!
+          and catch them.
         </h2>
         <h2 className="mb-5 text-center font-mono">
-          Before you embark on your journey, it's time to choose your companion.
-          Select from one of these three Pokémon to begin your adventure.
+          Now it's time to select one of these three Pokémon to begin your
+          adventure.
         </h2>
       </div>
 
@@ -47,7 +46,7 @@ const Welcome = () => {
                 className="rounded-xl"
               />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center font-mono">
               <h2 className="card-title">Bulbasaur</h2>
               <p>The grass-type Pokémon!</p>
               <div className="card-actions"></div>
@@ -72,7 +71,7 @@ const Welcome = () => {
                 className="rounded-xl"
               />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center font-mono">
               <h2 className="card-title">Charmander</h2>
               <p>The fire-type Pokémon!</p>
               <div className="card-actions"></div>
@@ -93,7 +92,7 @@ const Welcome = () => {
             <figure className="px-8 pt-8 transition-transform duration-300">
               <img src="./squirtle.png" alt="Squirtle" className="rounded-xl" />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center font-mono">
               <h2 className="card-title">Squirtle</h2>
               <p>The water-type Pokémon!</p>
               <div className="card-actions"></div>
@@ -102,7 +101,15 @@ const Welcome = () => {
         </div>
       </div>
 
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-blue-300">
+      <div className="flex items-center justify-center">
+        <input
+          type="text"
+          placeholder="Enter your name"
+          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-grey-200 font-mono py-2 px-4 rounded-md mb-3"
+        />
+      </div>
+
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-blue-300 font-mono">
         Start Adventure
       </button>
     </div>

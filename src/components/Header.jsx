@@ -52,7 +52,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a href="/welcome">
+          <a href="/welcome" className="ml-auto lg:ml-0">
             <img
               src="./pokemon-logo-black-transparent.png"
               alt="Pokemon Logo"
