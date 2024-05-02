@@ -42,38 +42,40 @@ const Header = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold text-lg font-mono"
             >
               <li>
-                <a>Fight</a>
+                <a href="/fight">Fight</a>
               </li>
               <li>
-                <a>Pokemon</a>
+                <a href="/pokemon">Pokemon</a>
               </li>
               <li>
-                <a>Leaderboard</a>
+                <a href="/leaderboard">Leaderboard</a>
               </li>
             </ul>
           </div>
-          <img
-            src="./pokemon-logo-black-transparent.png"
-            alt="Pokemon Logo"
-            className="logo btn btn-ghost text-xl ml-auto lg:ml-0 bg-transparent"
-          />
+          <a href="/welcome">
+            <img
+              src="./pokemon-logo-black-transparent.png"
+              alt="Pokemon Logo"
+              className="logo btn btn-ghost text-xl ml-auto lg:ml-0 bg-transparent"
+            />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 font-bold text-lg font-mono">
             <li>
-              <a>Fight</a>
+              <a href="/fight">Fight</a>
             </li>
             <li>
-              <a>Pokemon</a>
+              <a href="/pokemon">Pokemon</a>
             </li>
             <li>
-              <a>Leaderboard</a>
+              <a href="/leaderboard">Leaderboard</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
           <button className="btn" onClick={toggleTheme}>
-            {dayTheme ? <IoSunny /> : <IoMoon />}
+            {dayTheme ? <IoMoon /> : <IoSunny />}
           </button>
         </div>
       </div>
