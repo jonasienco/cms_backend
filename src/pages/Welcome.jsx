@@ -21,7 +21,7 @@ const Welcome = () => {
         </h2>
         <h2 className="mb-5 text-center font-mono">
           Now it's time to select one of these three Pokémon to begin your
-          adventure.
+          journey.
         </h2>
       </div>
 
@@ -55,7 +55,7 @@ const Welcome = () => {
           <div
             className={`card w-56 bg-base-100 shadow-xl ${
               selectedPokemon === "Charmander"
-                ? "bg-green-200"
+                ? "bg-red-200"
                 : hoveredPokemon === "Charmander"
                 ? "bg-gray-200"
                 : ""
@@ -80,7 +80,7 @@ const Welcome = () => {
           <div
             className={`card w-56 bg-base-100 shadow-xl ${
               selectedPokemon === "Squirtle"
-                ? "bg-green-200"
+                ? "bg-blue-200"
                 : hoveredPokemon === "Squirtle"
                 ? "bg-gray-200"
                 : ""
