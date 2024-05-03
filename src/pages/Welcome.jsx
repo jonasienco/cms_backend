@@ -1,12 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navigate = useNavigate();
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const [hoveredPokemon, setHoveredPokemon] = useState(null);
+  const [userName, setUserName] = useState("");
 
   const handleSelectPokemon = (pokemon) => {
     setSelectedPokemon(pokemon);
-    setHoveredPokemon(null);
+  };
+
+  const handleStartAdventure = () => {
+    if (selectedPokemon && userName) {
+      navigate("/fight", { state: { selectedPokemon, userName } });
+    } else {
+      alert("Please select a Pokemon and enter your name.");
+    }
   };
 
   return (
@@ -29,15 +38,9 @@ const Welcome = () => {
         <div className="flex justify-around flex-wrap">
           <div
             className={`card w-56 bg-base-100 shadow-xl ${
-              selectedPokemon === "Bulbasaur"
-                ? "bg-green-200"
-                : hoveredPokemon === "Bulbasaur"
-                ? "bg-gray-200"
-                : ""
+              selectedPokemon === "Bulbasaur" ? "bg-green-200" : ""
             }`}
             onClick={() => handleSelectPokemon("Bulbasaur")}
-            onMouseEnter={() => setHoveredPokemon("Bulbasaur")}
-            onMouseLeave={() => setHoveredPokemon(null)}
           >
             <figure className="px-8 pt-8 transition-transform duration-300">
               <img
@@ -54,15 +57,9 @@ const Welcome = () => {
           </div>
           <div
             className={`card w-56 bg-base-100 shadow-xl ${
-              selectedPokemon === "Charmander"
-                ? "bg-red-200"
-                : hoveredPokemon === "Charmander"
-                ? "bg-gray-200"
-                : ""
+              selectedPokemon === "Charmander" ? "bg-red-200" : ""
             }`}
             onClick={() => handleSelectPokemon("Charmander")}
-            onMouseEnter={() => setHoveredPokemon("Charmander")}
-            onMouseLeave={() => setHoveredPokemon(null)}
           >
             <figure className="px-8 pt-8 transition-transform duration-300">
               <img
@@ -79,15 +76,9 @@ const Welcome = () => {
           </div>
           <div
             className={`card w-56 bg-base-100 shadow-xl ${
-              selectedPokemon === "Squirtle"
-                ? "bg-blue-200"
-                : hoveredPokemon === "Squirtle"
-                ? "bg-gray-200"
-                : ""
+              selectedPokemon === "Squirtle" ? "bg-blue-200" : ""
             }`}
             onClick={() => handleSelectPokemon("Squirtle")}
-            onMouseEnter={() => setHoveredPokemon("Squirtle")}
-            onMouseLeave={() => setHoveredPokemon(null)}
           >
             <figure className="px-8 pt-8 transition-transform duration-300">
               <img src="./squirtle.png" alt="Squirtle" className="rounded-xl" />
@@ -106,10 +97,15 @@ const Welcome = () => {
           type="text"
           placeholder="Enter your name"
           className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-grey-200 font-mono py-2 px-4 rounded-md mb-3"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
         />
       </div>
 
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-blue-300 font-mono">
+      <button
+        className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-blue-300 font-mono"
+        onClick={handleStartAdventure}
+      >
         Start Adventure
       </button>
     </div>
